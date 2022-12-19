@@ -10,6 +10,7 @@ export default function MovieCard({ movie, addRecentlyViewed}) {
           <Link to={`/movie${movie.id}`} onClick={() => addRecentlyViewed({movie})}> 
             <img className="movieImage" src={`${base_url}${movie.poster_path}`} alt="movie.title" height={"300"}/>
             <h3>{`${movie.title}`}</h3>
+            <i class="fa-regular fa-star"></i>
             <p>{`Rating: ${movie.vote_average}`}</p>
             </Link>   
         </div>
