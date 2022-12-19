@@ -17,7 +17,8 @@ const [show, handleShow] = useState(false);
 //   }, [query]);
 
 
-const API_KEY = "bf920c0eccef0a5571a534bbb27fffc5";
+// const API_KEY = "bf920c0eccef0a5571a534bbb27fffc5";
+const API_KEY = process.env.REACT_APP_API_KEY;
 
   const searchMovieFetch = async (query) => {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query};`;
@@ -57,7 +58,7 @@ useEffect(() => {
       id="searchQueryInput"
         type="text"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => {setQuery(e.target.value); window.scrollTo({top: 350, left: 0, behavior: 'smooth'})}}
         placeholder="Search movie..."
       />
     </div>

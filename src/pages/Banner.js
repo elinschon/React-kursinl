@@ -20,7 +20,6 @@ useEffect(() => {
 setInterval(() => {fetchData()}, 6000);
 //sätter första bilden på bannern, annars kommer den efter 6s.
 fetchData();
-
 }, [])
 
 //? after movie is optional för innan är den inte definierad
@@ -31,7 +30,7 @@ fetchData();
     }}
     >
         <div className="bannerContents">
-            <h1 className="bannerTitle">{movie?.title}</h1>
+            <h1 className="bannerTitle">{movie?.title || movie?.original_title }</h1>
             <div className="bannerButtons">
                 <button className="bannerButton">Play</button>
                 <button className="bannerButton">My List</button>

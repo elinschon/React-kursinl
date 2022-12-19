@@ -2,7 +2,9 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 import axios from "../axios";
 
-const API_KEY = "bf920c0eccef0a5571a534bbb27fffc5";
+const API_KEY = process.env.REACT_APP_API_KEY;
+// const API_KEY = "bf920c0eccef0a5571a534bbb27fffc5";
+
 const base_url = "https://image.tmdb.org/t/p/w1280";
 
 export default function SingleMovie() {

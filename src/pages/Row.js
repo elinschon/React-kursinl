@@ -5,6 +5,7 @@ import './pages.css';
 
 function Row({ title, fetchURL, addRecentlyViewed}) {
     const [movies, setMovies] = useState([]);
+    // const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function fetchData() {

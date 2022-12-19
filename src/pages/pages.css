@@ -1,5 +1,6 @@
 .homeScreen {
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Mulish', sans-serif;
 }
 
 .nav {
@@ -130,7 +131,7 @@
     transition: all 0.3s;
 }
 
-/* -------------------------------------------------------------- */
+/* --- ROW CSS ----------------------------------------------------------- */
 
 .row {
     /* background: darkgrey; */
@@ -138,6 +139,10 @@
     margin-left: 20px;
     margin-right: 20;
     margin-top: 2rem;
+}
+
+.row h1 {
+    margin-left: 3vw;
 }
 
 .movies {
@@ -152,7 +157,7 @@
     display: none;
 }
 
-/* -------------------------------------------------------------- */
+/* --- MOVIECARD CSS ----------------------------------------------------------- */
 
 .movieCard {
     background-color: rgb(26, 26, 26);
@@ -191,36 +196,19 @@
     color:white;
 }
 
-/* -------------------------------------------------------------- */
+/* --- SINGLE MOVIE CSS ----------------------------------------------------------- */
 
 .movieInfo {
     display: flex;
     flex-direction: column;
-    /* margin-left: 5vw;
-    margin-top: 2vh; */
-    
-    /* position: relative;  */
-}
-
-.movieWrapper {
-
-    
 }
 
 .singleMovieImage {
     width: 100vw;
-
 }
 
-/* .singleMovieImage {
-    position: relative;
-    object-fit: contain;
-    width: 55vw;
-    padding: 2vh;
-} */
-
 .imgFadeBottom{
-    height: 50px;
+    height: 40px;
     width: 100vw;
     background-image: linear-gradient(transparent, black);
     z-index: 1;
@@ -249,21 +237,18 @@
 }
 
 @media (width <= 768px) {
-  .movieInfo {
-  }
+  .infoContainer h1 {
+    font-size: 1.6rem;
+}
 
-  .movieWrapper {
-    /* height: 50vh;
-    object-fit:contain; */
-  }
-
-  .wrapper {
-    /* height: 40vh;
-    /* object-fit: contain; */
-    width:100vw; 
-
-  }
-
-  .singleMovieImage {
+  .infoContainer p {
+    font-size: 0.7rem;
 }
 }
+
+@media (width >= 900px) {
+    .singleMovieImage {
+height: 80vh; 
+object-fit: contain;   
+}
+  }
