@@ -6,7 +6,7 @@ import requests from "../Requests";
 export default function Banner() {
 const [movie, setMovie] = useState([]);
 
-//fetchar random bild till bannern
+//Fetchar random bild till bannern
 useEffect(() => {
     async function fetchData() {
         const request = await axios.get(requests.fetchTrending);
@@ -16,13 +16,13 @@ useEffect(() => {
             ]
         )
     }
-    //ändrar bannern var sjätte sekund
+    //Ändrar bannern var sjätte sekund
 setInterval(() => {fetchData()}, 6000);
-//sätter första bilden på bannern, annars kommer den efter 6s.
+//Sätter första bilden på bannern
 fetchData();
 }, [])
 
-//? after movie is optional för innan är den inte definierad
+//? betyder optional för innan är movie inte definierad
     return <header className="banner" style={{
         backgroundSize: "cover",
         backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`,
@@ -35,7 +35,7 @@ fetchData();
                 <button className="bannerButton">Play</button>
                 <button className="bannerButton">My List</button>
             </div>
-            {/* <h1 className="bannerDescription">This is a description of the movie</h1> */}
+            {/* <h1 className="bannerDescription">{ (movie?.overview).substring(0, 150) + ('...')}</h1> */}
         </div>
 
         <div className="bannerFadeBottom" />

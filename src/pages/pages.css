@@ -1,7 +1,8 @@
 .homeScreen {
-    /* font-family: 'Raleway', sans-serif; */
     font-family: 'Mulish', sans-serif;
 }
+
+/* --- HEADER CSS ----------------------------------------------------------- */
 
 .nav {
     width: 100%;
@@ -24,22 +25,17 @@
 
 .navContent {
     display:flex;
-    justify-content: space-around;
+    /* justify-content: space-between; */
+    gap: 2vw;
 }
 
 .navLogo {
-    position: fixed;
+    /* position: fixed; */
     left: 0;
     width: 70px;
     object-fit: contain;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     cursor: pointer;
-}
-
-.searchBarContainer {
-    /* position: fixed; */
-    right: 2vw;
-    width: 40vw;
 }
 
 #searchQueryInput {
@@ -54,16 +50,20 @@
 }
 
 @media (width <= 768px) {
+    .navContent {
+        flex-direction: column;
+    }
     .searchBarContainer {
         width: 30vw;
     }
 
     #searchQueryInput {
-        width: 31vw;
+        width: 130px;
+        height: 4.5vh;
     }
 }
 
-/* -------------------------------------------------------------- */
+/* --- BANNER CSS ----------------------------------------------------------- */
 
 .banner {
     position: relative;
@@ -75,12 +75,8 @@
 }
 
 .bannerContents {
-    /* margin-left: 30px; */
     margin-left: 5vw;
-
-    /* padding-top: 140px; */
     padding-top: 30vh;
-    /* height: 190px; */
     height: 25vh;
 }
 
@@ -107,7 +103,7 @@
         rgba (37, 37, 37, 0.61),
         black,
     ); */
-    background-image: linear-gradient(transparent, black);
+    background-image: linear-gradient(transparent, rgb(17, 16, 16), black);
 }
 
 .bannerButton {
@@ -138,7 +134,7 @@
     color:white;
     margin-left: 20px;
     margin-right: 20;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
 }
 
 .row h1 {
@@ -166,7 +162,7 @@
     cursor: pointer;
     color:white;
     max-height:400px;
-    /* object-fit: contain; */
+
     /* for hover-effect: */
     margin-right: 5px;
     width:100%;
@@ -234,6 +230,38 @@
     margin-bottom: 2rem;
     letter-spacing: 1px;
     line-height: 17px;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    margin-bottom: 3vh;
+}
+
+.singleMovieButton {
+    cursor: pointer;
+    /* color: white; */
+    color:black;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    border-radius: 0.5vw;
+    /* padding-left: 2rem; */
+    width: 6rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+    /* background-color: rgb(26, 26, 26); */
+    background-color: #e6e6e6;
+    padding-bottom: 0.5rem;
+}
+
+.singleMovieButton:hover {
+    /* color: #000; */
+    color: white;
+    /* background-color: #e6e6e6; */
+    background-color: rgb(26, 26, 26);
+    transition: all 0.3s;
 }
 
 @media (width <= 768px) {

@@ -8,7 +8,9 @@ function App() {
   const [recentlyViewed, setRecentlyViewed] = useState([]);
 
   function addRecentlyViewed({ movie }) {
-    //filmen läggs bara till i listan om den inte redan finns där
+
+    //Filmen läggs bara till i listan om den inte redan finns där.
+    //Listan begränsas till fem filmer.
     let newMovie = recentlyViewed.find((newMovie) => movie.id === newMovie.id)
     if(!newMovie){
     let newList = [...recentlyViewed, movie];
