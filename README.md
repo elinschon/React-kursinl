@@ -3,6 +3,8 @@
 
 My IMDB-clone is the final course submission in the course Javascript backend/React.
 
+https://user-images.githubusercontent.com/88188776/208855618-d8d180ea-60bd-4126-bbc2-076721cf7d8d.png
+
 
 | Tool             | Description   |
 | :-------------:|--------------|
