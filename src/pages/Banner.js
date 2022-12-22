@@ -15,6 +15,7 @@ useEffect(() => {
                 Math.floor(Math.random() * request.data.results.length -1)
             ]
         )
+        console.log(movie && movie);
     }
     //Ändrar bannern var sjätte sekund
 setInterval(() => {fetchData()}, 6000);
@@ -25,17 +26,17 @@ fetchData();
 //? betyder optional för innan är movie inte definierad
     return <header className="banner" style={{
         backgroundSize: "cover",
-        backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path || movie?.backdrop} ")`,
         backgroundPosition: "center center",
     }}
     >
         <div className="bannerContents">
-            <h1 className="bannerTitle">{movie?.title || movie?.original_title }</h1>
+            <h1 className="bannerTitle">{movie?.title || movie?.name || movie?.name }</h1>
             <div className="bannerButtons">
                 <button className="bannerButton">Play</button>
                 <button className="bannerButton">My List</button>
             </div>
-            {/* <h1 className="bannerDescription">{ (movie?.overview).substring(0, 150) + ('...') || ''} </h1> */}
+            <h1 className="bannerDescription">{ (movie?.overview)?.substring(0, 150) + ('...')} </h1>
         </div>
 
         <div className="bannerFadeBottom" />
