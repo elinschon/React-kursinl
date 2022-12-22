@@ -39,7 +39,7 @@ useEffect(() => {
     return (
         <div className={`nav ${show && "navBlack"}`}>
             <div className="navContent">
-            <img className="navLogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1150px-IMDB_Logo_2016.svg.png?20200406194337" alt="" />
+            <img className="navLogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1150px-IMDB_Logo_2016.svg.png?20200406194337" alt="Logo" />
             <div className="searchBarContainer">
       <input
       id="searchQueryInput"

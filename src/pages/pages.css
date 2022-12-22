@@ -20,7 +20,6 @@
 
 .navBlack {
     background-color: black;
-
 }
 
 .navContent {
@@ -67,7 +66,6 @@
 
 .banner {
     position: relative;
-    /* height: 50vh; */
     height: 60vh;
     color:white;
     object-fit: contain;
@@ -81,9 +79,10 @@
 }
 
 .bannerTitle {
-    font-size: 2.6rem;
-    font-weight: 800;
+    font-size: 2.3rem;
+    font-weight: 700;
     padding-bottom: 0.3rem;
+    padding-bottom: 2vh;
 }
 
 .bannerDescription {
@@ -204,11 +203,12 @@
 }
 
 .imgFadeBottom{
-    height: 40px;
+    height: 50px;
     width: 100vw;
     background-image: linear-gradient(transparent, black);
     z-index: 1;
-    margin-top: -40px;
+    /* margin-top: -50px; */
+    margin-top: -6vh;
 }
 
 .infoContainer {
@@ -241,25 +241,20 @@
 
 .singleMovieButton {
     cursor: pointer;
-    /* color: white; */
     color:black;
     outline: none;
     border: none;
     font-weight: 700;
     border-radius: 0.5vw;
-    /* padding-left: 2rem; */
     width: 6rem;
     margin-right: 1rem;
     padding-top: 0.5rem;
-    /* background-color: rgb(26, 26, 26); */
     background-color: #e6e6e6;
     padding-bottom: 0.5rem;
 }
 
 .singleMovieButton:hover {
-    /* color: #000; */
     color: white;
-    /* background-color: #e6e6e6; */
     background-color: rgb(26, 26, 26);
     transition: all 0.3s;
 }
@@ -272,11 +267,23 @@
   .infoContainer p {
     font-size: 0.7rem;
 }
+
+.imgFadeBottom {
+    margin-top: -50px;
 }
+}
+
+@media (width <= 1086px) {
+    .imgFadeBottom {
+        z-index: -40px;
+}
+
+  }
 
 @media (width >= 900px) {
     .singleMovieImage {
 height: 80vh; 
 object-fit: contain;   
 }
+
   }

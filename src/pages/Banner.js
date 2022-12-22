@@ -35,7 +35,7 @@ fetchData();
                 <button className="bannerButton">Play</button>
                 <button className="bannerButton">My List</button>
             </div>
-            {/* <h1 className="bannerDescription">{ (movie?.overview).substring(0, 150) + ('...')}</h1> */}
+            {/* <h1 className="bannerDescription">{ (movie?.overview).substring(0, 150) + ('...') || ''} </h1> */}
         </div>
 
         <div className="bannerFadeBottom" />
