@@ -8,15 +8,17 @@ import Row from './Row';
 import requests from '../Requests';
 import RecentlyViewedRow from './RecentlyViewedRow';
 
-function Home({ addRecentlyViewed, recentlyViewed, setRecentlyViewed}) {
+function Home({ addRecentlyViewed, recentlyViewed}) {
   const [searchedMovies, setSearchedMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
  
   return (
     <div className="homeScreen">
         <Header
         searchedMovies={searchedMovies}
         setSearchedMovies={setSearchedMovies}
-        fetchURL={requests.fetchsearchMovies} //ta bort sen om axios ej funkar i HEADER
+        fetchURL={requests.fetchsearchMovies}
       />
         <Banner />
         <ResultRow searchedMovies={searchedMovies} />
@@ -24,15 +26,23 @@ function Home({ addRecentlyViewed, recentlyViewed, setRecentlyViewed}) {
         title="Popular"
         fetchURL={requests.fetchPopular}
         addRecentlyViewed={addRecentlyViewed}
+        isLoading={isLoading}
+        setIsLoading={setIsLoading} 
       />
       <Row title="Upcoming" fetchURL={requests.fetchUpcoming}
-       addRecentlyViewed={addRecentlyViewed} 
+       addRecentlyViewed={addRecentlyViewed}
+       isLoading={isLoading}
+        setIsLoading={setIsLoading} 
        />
       <Row title="Top Rated" fetchURL={requests.fetchTopRated}
        addRecentlyViewed={addRecentlyViewed} 
+       isLoading={isLoading}
+        setIsLoading={setIsLoading} 
        />
       <Row title="Horror movies" fetchURL={requests.fetchHorrorMovies}
        addRecentlyViewed={addRecentlyViewed} 
+       isLoading={isLoading}
+        setIsLoading={setIsLoading} 
        />
        <RecentlyViewedRow recentlyViewed={recentlyViewed}/>
        

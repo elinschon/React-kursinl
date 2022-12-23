@@ -1,6 +1,8 @@
 .homeScreen {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Mulish', sans-serif;
 }
+
+/* --- HEADER CSS ----------------------------------------------------------- */
 
 .nav {
     width: 100%;
@@ -18,30 +20,25 @@
 
 .navBlack {
     background-color: black;
-
 }
 
 .navContent {
     display:flex;
-    justify-content: space-around;
+    /* justify-content: space-between; */
+    gap: 2vw;
 }
 
 .navLogo {
-    position: fixed;
+    /* position: fixed; */
     left: 0;
     width: 70px;
     object-fit: contain;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     cursor: pointer;
 }
 
-.searchBarContainer {
-    /* position: fixed; */
-    right: 20px;
-}
-
 #searchQueryInput {
-    width: 100%;
+    /* width: 100%; */
     height: 2.8rem;
     background: #f5f5f5;
     outline: none;
@@ -51,26 +48,42 @@
     font-size: 1rem;
 }
 
-/* -------------------------------------------------------------- */
+@media (width <= 768px) {
+    .navContent {
+        flex-direction: column;
+    }
+    .searchBarContainer {
+        width: 30vw;
+    }
+
+    #searchQueryInput {
+        width: 130px;
+        height: 4.5vh;
+    }
+}
+
+/* --- BANNER CSS ----------------------------------------------------------- */
 
 .banner {
     position: relative;
-    height: 50vh;
+    height: 60vh;
     color:white;
-    object-fit: contain;
+    object-fit:contain;
+    /* object-position: 50% 100%; */
     margin-bottom: 5rem;
 }
 
 .bannerContents {
-    margin-left: 30px;
-    padding-top: 140px;
-    height: 190px;
+    margin-left: 5vw;
+    padding-top: 30vh;
+    height: 25vh;
 }
 
 .bannerTitle {
-    font-size: 2.6rem;
-    font-weight: 800;
+    font-size: 2.3rem;
+    font-weight: 700;
     padding-bottom: 0.3rem;
+    padding-bottom: 2vh;
 }
 
 .bannerDescription {
@@ -90,7 +103,7 @@
         rgba (37, 37, 37, 0.61),
         black,
     ); */
-    background-image: linear-gradient(transparent, black);
+    background-image: linear-gradient(transparent, rgb(17, 16, 16), black);
 }
 
 .bannerButton {
@@ -100,7 +113,6 @@
     border: none;
     font-weight: 700;
     border-radius: 0.5vw;
-    /* padding-left: 2rem; */
     width: 6rem;
     margin-right: 1rem;
     padding-top: 0.5rem;
@@ -114,14 +126,18 @@
     transition: all 0.3s;
 }
 
-/* -------------------------------------------------------------- */
+/* --- ROW CSS ----------------------------------------------------------- */
 
 .row {
     /* background: darkgrey; */
     color:white;
     margin-left: 20px;
     margin-right: 20;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
+}
+
+.row h1 {
+    margin-left: 3vw;
 }
 
 .movies {
@@ -136,7 +152,7 @@
     display: none;
 }
 
-/* -------------------------------------------------------------- */
+/* --- MOVIECARD CSS ----------------------------------------------------------- */
 
 .movieCard {
     background-color: rgb(26, 26, 26);
@@ -145,7 +161,7 @@
     cursor: pointer;
     color:white;
     max-height:400px;
-    /* object-fit: contain; */
+
     /* for hover-effect: */
     margin-right: 5px;
     width:100%;
@@ -166,37 +182,108 @@
     opacity: 1;
 }
 
-/* .movieImage{
+.movieImage{
     width: 200px;
-} */
+}
 
 .movieCard a {
     text-decoration: none;
     color:white;
 }
 
-/* -------------------------------------------------------------- */
+/* --- SINGLE MOVIE CSS ----------------------------------------------------------- */
 
 .movieInfo {
     display: flex;
-    position: relative;
+    flex-direction: column;
 }
 
 .singleMovieImage {
-    position: relative;
-    object-fit: contain;
-    width: 50vw;
+    width: 100vw;
 }
 
-.imgFadeSide{
-    height: 100vh;
-    width: 150px;
-    background-image: linear-gradient(to right, transparent, black);
-    margin-left: -48px;
+.imgFadeBottom{
+    height: 50px;
+    width: 100vw;
+    background-image: linear-gradient(transparent, black);
     z-index: 1;
+    /* margin-top: -50px; */
+    margin-top: -6vh;
 }
 
 .infoContainer {
     display: flex;
     flex-direction: column;
+    margin-left: 20vw;
+    margin-right: 20vw;
 }
+
+.infoContainer h1 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.infoContainer p {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    line-height: 17px;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    margin-bottom: 3vh;
+}
+
+.singleMovieButton {
+    cursor: pointer;
+    color:black;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    border-radius: 0.5vw;
+    width: 6rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+    background-color: #e6e6e6;
+    padding-bottom: 0.5rem;
+}
+
+.singleMovieButton:hover {
+    color: white;
+    background-color: rgb(26, 26, 26);
+    transition: all 0.3s;
+}
+
+@media (width <= 768px) {
+  .infoContainer h1 {
+    font-size: 1.6rem;
+}
+
+  .infoContainer p {
+    font-size: 0.7rem;
+}
+
+.imgFadeBottom {
+    margin-top: -50px;
+}
+}
+
+@media (width <= 1086px) {
+    .imgFadeBottom {
+        z-index: -40px;
+}
+
+  }
+
+@media (width >= 900px) {
+    .singleMovieImage {
+height: 80vh; 
+object-fit: contain;   
+}
+
+  }
